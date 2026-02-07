@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promita's Valentine Week 2026</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #ffeff2, #fff0f5);
+            min-height: 100vh;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px 20px;
+            color: #5d2d47;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            text-align: center;
+        }
+        
+        header {
+            margin-bottom: 40px;
+        }
+        
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4rem;
+            color: #e6396f;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: #a64d79;
+            margin-bottom: 20px;
+        }
+        
+        .date-display {
+            background-color: rgba(255, 255, 255, 0.85);
+            padding: 12px 25px;
+            border-radius: 25px;
+            display: inline-block;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(230, 57, 111, 0.15);
+            margin-bottom: 15px;
+            color: #e6396f;
+        }
+        
+        .instructions {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 15px 20px;
+            border-radius: 15px;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+            font-size: 1.05rem;
+            line-height: 1.5;
+        }
+        
+        .instructions i {
+            color: #e6396f;
+            margin: 0 5px;
+        }
+        
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 25px;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto 40px;
+        }
+        
+        .day-card {
+            background: linear-gradient(135deg, #ffffff, #fff5f8);
+            border-radius: 15px;
+            padding: 20px 15px;
+            box-shadow: 0 8px 20px rgba(166, 77, 121, 0.15);
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            border: 2px solid transparent;
+            min-height: 180px;
+        }
+        
+        .day-card:hover:not(.locked) {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 15px 30px rgba(230, 57, 111, 0.25);
+            border-color: rgba(230, 57, 111, 0.3);
+        }
+        
+        .day-card.today {
+            background: linear-gradient(135deg, #ffe6ee, #ffd6e4);
+            border: 2px solid #e6396f;
+            animation: floatCard 3s ease-in-out infinite;
+        }
+        
+        .day-card.locked {
+            opacity: 0.6;
+            cursor: not-allowed;
+            filter: grayscale(40%);
+        }
+        
+        .day-card.locked:hover {
+            transform: none;
+            box-shadow: 0 8px 20px rgba(166, 77, 121, 0.15);
+            border-color: transparent;
+        }
+        
+        .lock-icon {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            color: #a64d79;
+            font-size: 1.2rem;
+        }
+        
+        @keyframes floatCard {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        
+        .day-number {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #e6396f;
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1rem;
+            box-shadow: 0 4px 8px rgba(230, 57, 111, 0.3);
+        }
+        
+        .day-card.locked .day-number {
+            background-color: #a64d79;
+            opacity: 0.8;
+        }
+        
+        .day-card-icon {
+            font-size: 3.5rem;
+            margin: 15px 0;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .day-card.locked .day-card-icon {
+            opacity: 0.7;
+        }
+        
+        .day-theme {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.8rem;
+            color: #e6396f;
+            margin-bottom: 5px;
+            text-align: center;
+            line-height: 1.2;
+        }
+        
+        .day-card.locked .day-theme {
+            color: #a64d79;
+        }
+        
+        .date {
+            font-family: 'Playfair Display', serif;
+            font-size: 1rem;
+            color: #a64d79;
+            font-weight: 600;
+        }
+        
+        .day-card.locked .date {
+            color: #8a7f84;
+        }
+        
+        /* Popup Card Styles */
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.5s ease;
+            backdrop-filter: blur(5px);
+            padding: 20px;
+        }
+        
+        .popup-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .popup-card {
+            width: 100%;
+            max-width: 900px;
+            height: auto;
+            max-height: 90vh;
+            position: relative;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+            background: linear-gradient(135deg, #ffffff, #ffeef2);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .popup-content {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            overflow: hidden;
+        }
+        
+        .popup-header {
+            text-align: center;
+            padding: 30px 40px 20px;
+            flex-shrink: 0;
+            background: linear-gradient(135deg, rgba(255, 238, 242, 0.9), rgba(255, 226, 238, 0.9));
+            border-bottom: 2px solid rgba(230, 57, 111, 0.2);
+        }
+        
+        .popup-icon {
+            font-size: 3.5rem;
+            margin: 0 0 15px 0;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        .popup-theme {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.8rem;
+            color: #e6396f;
+            margin-bottom: 5px;
+        }
+        
+        .popup-date {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: #a64d79;
+            font-weight: 600;
+        }
+        
+        .popup-body {
+            display: flex;
+            flex: 1;
+            gap: 30px;
+            padding: 30px 40px;
+            overflow: hidden;
+            min-height: 0;
+        }
+        
+        .popup-image-container {
+            flex: 1;
+            min-width: 0;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .popup-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .popup-image:hover {
+            transform: scale(1.05);
+        }
+        
+        .popup-message-container {
+            flex: 1;
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        
+        .popup-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.2rem;
+            color: #e6396f;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .popup-message {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: #5d2d47;
+            margin-bottom: 20px;
+            flex: 1;
+            overflow-y: auto;
+            padding: 0 10px 10px 0;
+            max-height: 300px;
+        }
+        
+        .popup-message::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        .popup-message::-webkit-scrollbar-track {
+            background: rgba(230, 57, 111, 0.1);
+            border-radius: 10px;
+        }
+        
+        .popup-message::-webkit-scrollbar-thumb {
+            background: rgba(230, 57, 111, 0.3);
+            border-radius: 10px;
+        }
+        
+        .popup-message::-webkit-scrollbar-thumb:hover {
+            background: rgba(230, 57, 111, 0.5);
+        }
+        
+        .popup-wish {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.8rem;
+            color: #e6396f;
+            font-style: italic;
+            text-align: center;
+            padding: 15px;
+            background: rgba(255, 226, 238, 0.3);
+            border-radius: 10px;
+            border: 1px solid rgba(230, 57, 111, 0.2);
+            margin-top: 10px;
+            flex-shrink: 0;
+        }
+        
+        .close-popup {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #e6396f;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.2rem;
+            z-index: 10;
+            border: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .close-popup:hover {
+            background-color: #d32f62;
+            transform: scale(1.1);
+        }
+        
+        /* Emoji Burst Animation */
+        .emoji-burst {
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            font-size: 2rem;
+            opacity: 0;
+            animation: burst 3s forwards;
+        }
+        
+        @keyframes burst {
+            0% {
+                opacity: 1;
+                transform: translate(0, 0) scale(1) rotate(0deg);
+            }
+            100% {
+                opacity: 0;
+                transform: translate(var(--tx), var(--ty)) scale(0.5) rotate(360deg);
+            }
+        }
+        
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            background-color: #e6396f;
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            font-size: 1.1rem;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 6px 15px rgba(230, 57, 111, 0.3);
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+        }
+        
+        .btn:hover {
+            background-color: #d32f62;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(230, 57, 111, 0.4);
+        }
+        
+        .btn:disabled {
+            background-color: #a64d79;
+            cursor: not-allowed;
+            opacity: 0.7;
+            transform: none;
+            box-shadow: 0 6px 15px rgba(166, 77, 121, 0.3);
+        }
+        
+        .footer {
+            margin-top: 40px;
+            color: #a64d79;
+            padding: 20px;
+            text-align: center;
+            font-style: italic;
+            width: 100%;
+            max-width: 800px;
+        }
+        
+        /* Developer mode indicator - hidden by default */
+        .dev-mode-indicator {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background-color: #333;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            z-index: 9999;
+            opacity: 0.7;
+            font-family: monospace;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 1100px) {
+            .cards-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        
+        @media (max-width: 900px) {
+            .popup-body {
+                flex-direction: column;
+                gap: 25px;
+                padding: 25px 30px;
+            }
+            
+            .popup-image-container {
+                height: 250px;
+                flex: none;
+            }
+            
+            .popup-message-container {
+                min-height: 300px;
+            }
+            
+            .popup-message {
+                max-height: 200px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 3rem;
+            }
+            
+            .cards-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .day-card {
+                min-height: 160px;
+                padding: 15px 10px;
+            }
+            
+            .day-theme {
+                font-size: 1.6rem;
+            }
+            
+            .popup-header {
+                padding: 25px 30px 15px;
+            }
+            
+            .popup-theme {
+                font-size: 2.3rem;
+            }
+            
+            .popup-date {
+                font-size: 1.2rem;
+            }
+            
+            .popup-body {
+                padding: 20px 25px;
+            }
+            
+            .popup-title {
+                font-size: 1.9rem;
+            }
+            
+            .popup-message {
+                font-size: 1.1rem;
+                max-height: 180px;
+            }
+            
+            .popup-wish {
+                font-size: 1.6rem;
+                padding: 12px;
+            }
+            
+            .btn {
+                padding: 12px 24px;
+                font-size: 1rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            body {
+                padding: 20px 15px;
+            }
+            
+            .cards-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+            
+            .day-card {
+                min-height: 150px;
+            }
+            
+            .day-theme {
+                font-size: 1.5rem;
+            }
+            
+            .day-card-icon {
+                font-size: 3rem;
+                height: 60px;
+            }
+            
+            .popup-overlay {
+                padding: 15px;
+            }
+            
+            .popup-header {
+                padding: 20px 25px 10px;
+            }
+            
+            .popup-theme {
+                font-size: 2rem;
+            }
+            
+            .popup-date {
+                font-size: 1.1rem;
+            }
+            
+            .popup-body {
+                padding: 15px 20px;
+                gap: 20px;
+            }
+            
+            .popup-image-container {
+                height: 200px;
+            }
+            
+            .popup-title {
+                font-size: 1.7rem;
+                margin-bottom: 15px;
+            }
+            
+            .popup-message {
+                font-size: 1rem;
+                max-height: 150px;
+            }
+            
+            .popup-wish {
+                font-size: 1.4rem;
+                padding: 10px;
+            }
+            
+            .controls {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 400px) {
+            .cards-grid {
+                grid-template-columns: repeat(1, 1fr);
+                max-width: 300px;
+            }
+            
+            .popup-theme {
+                font-size: 1.8rem;
+            }
+            
+            .popup-image-container {
+                height: 180px;
+            }
+        }
+        
+        /* Very small height screens */
+        @media (max-height: 700px) {
+            .popup-card {
+                max-height: 85vh;
+            }
+            
+            .popup-header {
+                padding: 20px 30px 15px;
+            }
+            
+            .popup-body {
+                padding: 20px 30px;
+            }
+            
+            .popup-image-container {
+                height: 200px;
+            }
+            
+            .popup-message {
+                max-height: 150px;
+            }
+        }
+        
+        @media (max-height: 600px) {
+            .popup-card {
+                max-height: 80vh;
+            }
+            
+            .popup-header {
+                padding: 15px 25px 10px;
+            }
+            
+            .popup-theme {
+                font-size: 2rem;
+            }
+            
+            .popup-body {
+                padding: 15px 25px;
+                gap: 15px;
+            }
+            
+            .popup-image-container {
+                height: 180px;
+            }
+            
+            .popup-message {
+                max-height: 120px;
+            }
+        }
+        #topimg{
+            width: 200px;
+            border-radius: 20px;          /* radius */
+            transition: all 0.35s ease;   /* smooth animation */
+            cursor: pointer;
+            }
+
+            /* hover animation */
+            #topimg:hover{
+            transform: scale(1.08) translateY(-6px); /* zoom + lift */
+            box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+            }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img id="topimg" src="./asset/top.jpeg" width="200px" alt="">
+            <h1>Promita's Valentine Week</h1>
+            <p class="subtitle">Click on any day to open a special card with beautiful image and message</p>
+            <div class="date-display">
+                <i class="fas fa-calendar-alt"></i> 
+                Today is: <span id="today-date">Loading...</span>
+            </div>
+        </header>
+    
+        
+        <div class="cards-grid" id="cards-grid">
+            <!-- Day cards will be generated by JavaScript -->
+        </div>
+        
+        <div class="controls">
+            <button class="btn" id="open-today-btn">
+                <i class="fas fa-calendar-day"></i> Open Today's Card
+            </button>
+        </div>
+        <center>
+        <div class="footer">
+            <p>Made with <i class="fas fa-heart" style="color: #e6396f;"></i> for My Motku Malai - Each day holds a special message from my heart</p>
+            <p>Valentine's Week 2026: February 7th to February 14th</p>
+        </div>
+        </center>
+    </div>
+    
+    <!-- Popup Overlay -->
+    <div class="popup-overlay" id="popup-overlay">
+        <div class="popup-card">
+            <button class="close-popup" id="close-popup">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="popup-content" id="popup-content">
+                <!-- Popup content will be generated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ============================================
+        // DEVELOPER VARIABLE - CHANGE THIS TO UNLOCK ALL DAYS
+        // Set to true to unlock all days, false for normal date-based locking
+        // ============================================
+        const unlockAllDays = false; // Change this to true to unlock all days
+        // ============================================
+        
+        // Show developer mode indicator if all days are unlocked
+        if (unlockAllDays) {
+            const devIndicator = document.createElement('div');
+            devIndicator.className = 'dev-mode-indicator';
+            devIndicator.textContent = 'DEV MODE: All Days Unlocked';
+            document.body.appendChild(devIndicator);
+        }
+        
+        // Current day index (for auto-opening today's card)
+        let todayIndex = -1;
+        let todayIsUnlocked = false;
+        
+        // Valentine's Week data for Feb 7-14, 2026 with image URLs
+        const valentineWeekData = [
+            {
+                date: "2026-02-07",
+                dayNumber: 1,
+                theme: "Rose Day",
+                title: "A Rose for My Love",
+                icon: "🌹",
+                message: "Just as a rose blooms with grace and beauty, my love for you blossoms more each day. You are the most beautiful flower in my garden of life, and every petal reminds me of your delicate love. Every moment with you feels like a fresh bouquet of roses - vibrant, fragrant, and full of life. My love for you grows deeper with each passing day, just like the roots of a rose plant that grow stronger over time.",
+                wish: "Happy Rose Day, my beautiful flower!",
+                color: "#e6396f",
+                emojis: ["🌹", "🌷", "💐", "🌸", "🌺", "🥀", "🌻", "💮"],
+                image: "https://images.unsplash.com/photo-1519378058457-4c29a0a2efac?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
+            },
+            {
+                date: "2026-02-08",
+                dayNumber: 2,
+                theme: "Propose Day",
+                title: "Will You Be Mine Forever?",
+                icon: "💍",
+                message: "Today I ask you again, with all my heart: Will you continue this beautiful journey with me forever? You make every day worth living and every moment magical. From the first moment I saw you, I knew my search was over. You complete me in ways I never knew were possible. With you, I've found my forever home, my safe haven, my greatest joy. I promise to cherish you, respect you, and love you more with each passing day.",
+                wish: "On Propose Day, I promise my forever to you!",
+                color: "#ff6b9d",
+                emojis: ["💍", "💎", "💖", "❤️", "💕", "💓", "💗", "💘"],
+                image: "https://images.unsplash.com/photo-1518568814500-bf0f8d125f46?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
+            },
+            {
+                date: "2026-02-09",
+                dayNumber: 3,
+                theme: "Chocolate Day",
+                title: "Sweet as Chocolate",
+                icon: "🍫",
+                message: "Like the sweetness of chocolate, every moment with you is deliciously perfect. You add sweetness to my life in ways I never imagined possible. Just as chocolate melts in the mouth, my heart melts when I think of you. Your smile is sweeter than the finest chocolate, your laughter more delightful than any dessert. You are my favorite indulgence, my sweet escape, my delicious dream come true. With you, every day feels like a box of assorted chocolates - always surprising and perfectly sweet.",
+                wish: "Happy Chocolate Day, my sweetheart!",
+                color: "#8b4513",
+                emojis: ["🍫", "🍬", "🍭", "🎂", "🍰", "🧁", "🍩", "🍪"],
+                image: "https://images.unsplash.com/photo-1511381939415-e44015466834?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
+            },
+            {
+                date: "2026-02-10",
+                dayNumber: 4,
+                theme: "Teddy Day",
+                title: "My Cuddly Companion",
+                icon: "🧸",
+                message: "Just as a teddy bear is soft and comforting, I want to be your safe place forever. You can always count on my warm hugs and unconditional love. Like a teddy bear that's always there to comfort, I want to be your constant companion through life's ups and downs. You can snuggle into my love whenever you need comfort, and I'll always be there to wipe away your tears and share your joys. You are my favorite cuddle buddy, my soft place to land, my forever teddy bear.",
+                wish: "Happy Teddy Day, my cuddly love!",
+                color: "#d2691e",
+                emojis: ["🧸", "🐻", "🐨", "🤗", "🫂", "💞", "💝", "💖"],
+                image: "data:image/jpeg;base64,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"
+            },
+            {
+                date: "2026-02-11",
+                dayNumber: 5,
+                theme: "Promise Day",
+                title: "Promises of Forever",
+                icon: "🤝",
+                message: "I promise to stand by you through everything, to cherish our love, and to make you smile every single day. My promises are eternal and true. I promise to love you unconditionally, to support your dreams, to be your biggest cheerleader. I promise to listen when you speak, to understand when you're silent, to hold you when you need comfort. I promise to grow with you, learn with you, and build a beautiful life with you. These promises are written not just for today, but for all our tomorrows.",
+                wish: "On Promise Day, I pledge my eternal love to you!",
+                color: "#4682b4",
+                emojis: ["🤝", "🤲", "🙏", "💌", "📜", "✉️", "💝", "💞"],
+                image: "data:image/jpeg;base64,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"
+            },
+            {
+                date: "2026-02-12",
+                dayNumber: 6,
+                theme: "Hug Day",
+                title: "Warm Embrace",
+                icon: "🤗",
+                message: "A hug is the perfect way to express what words cannot. Today and always, I send you all my love through this warm, virtual embrace that spans any distance. In my arms, you'll always find comfort, safety, and unconditional love. A hug from you has the power to melt away my stress, brighten my darkest days, and make everything right in the world. Even when we're apart, I carry the memory of your hugs in my heart, keeping me warm and loved until we're together again.",
+                wish: "Happy Hug Day! Sending you the warmest embrace!",
+                color: "#ff7f50",
+                emojis: ["🤗", "🫂", "💖", "❤️", "💕", "💓", "💗", "💞"],
+                image: "data:image/jpeg;base64,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"
+            },
+            {
+                date: "2026-02-13",
+                dayNumber: 7,
+                theme: "Kiss Day",
+                title: "Sealed with a Kiss",
+                icon: "💋",
+                message: "A kiss is a lovely trick designed by nature to stop speech when words become superfluous. My love for you speaks volumes without words, in every glance and every touch. Your kisses are like sweet poetry written on my lips, telling stories of love that words could never express. Each kiss is a promise, a memory, a dream come true. It's in these moments that I feel most connected to you, where our souls meet and our hearts beat as one. Every kiss with you feels like the first, filled with excitement, passion, and endless love.",
+                wish: "Happy Kiss Day! Sealing my love with a kiss!",
+                color: "#ff1493",
+                emojis: ["💋", "😘", "🥰", "😍", "💖", "❤️", "💕", "💓"],
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToIyKMBJ6MKz8aWwkkarr2roQvriUGe7KjuA&s"
+            },
+            {
+                date: "2026-02-14",
+                dayNumber: 8,
+                theme: "Valentine's Day",
+                title: "Happy Valentine's Day!",
+                icon: "❤️",
+                message: "My dearest Promi, you are my greatest love story. Today and every day, I choose you. You are my heart, my joy, my everything. Happy Valentine's Day, my love! From the moment you entered my life, everything changed for the better. You brought light to my darkness, joy to my sorrow, love to my loneliness. You are not just my Valentine for today, but for every day of every year. With you, I've found a love that's patient, kind, and true - a love that inspires me to be better, to dream bigger, to love deeper.",
+                wish: "Happy Valentine's Day, my eternal love!",
+                color: "#dc143c",
+                emojis: ["❤️", "💖", "💕", "💓", "💗", "💘", "💝", "🥰", "😍", "😘"],
+                image: "./asset/final.jpeg"
+            }
+        ];
+        
+        // Get today's date
+        const today = new Date();
+        const todayString = today.toISOString().split('T')[0];
+        
+        // Format date for display
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        document.getElementById('today-date').textContent = today.toLocaleDateString('en-US', options);
+        
+        // Format date for display
+        function formatDateDisplay(dateString) {
+            const date = new Date(dateString);
+            return date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+        }
+        
+        // Format short date
+        function formatShortDate(dateString) {
+            const date = new Date(dateString);
+            const month = date.toLocaleDateString('en-US', { month: 'short' });
+            return `${month} ${date.getDate()}`;
+        }
+        
+        // Check if a date is today or in the past
+        function isDateUnlocked(dateString) {
+            // If developer mode is on, all dates are unlocked
+            if (unlockAllDays) {
+                return true;
+            }
+            
+            const cardDate = new Date(dateString);
+            const today = new Date();
+            
+            // Set both dates to midnight for accurate comparison
+            cardDate.setHours(0, 0, 0, 0);
+            today.setHours(0, 0, 0, 0);
+            
+            return cardDate <= today;
+        }
+        
+        // Render all day cards
+        function renderDayCards() {
+            const container = document.getElementById('cards-grid');
+            container.innerHTML = '';
+            
+            valentineWeekData.forEach((dayData, index) => {
+                const isToday = dayData.date === todayString;
+                const isUnlocked = isDateUnlocked(dayData.date);
+                
+                // Store today's index for auto-opening
+                if (isToday) {
+                    todayIndex = index;
+                    todayIsUnlocked = isUnlocked;
+                }
+                
+                // Create day card
+                const dayCard = document.createElement('div');
+                dayCard.className = `day-card ${isToday ? 'today' : ''} ${!isUnlocked ? 'locked' : ''}`;
+                dayCard.dataset.index = index;
+                dayCard.dataset.unlocked = isUnlocked;
+                
+                // Add lock icon for locked days (only if not in developer mode)
+                if (!isUnlocked && !unlockAllDays) {
+                    const lockIcon = document.createElement('div');
+                    lockIcon.className = 'lock-icon';
+                    lockIcon.innerHTML = '<i class="fas fa-lock"></i>';
+                    dayCard.appendChild(lockIcon);
+                }
+                
+                const dayNumber = document.createElement('div');
+                dayNumber.className = 'day-number';
+                dayNumber.textContent = dayData.dayNumber;
+                
+                const cardIcon = document.createElement('div');
+                cardIcon.className = 'day-card-icon';
+                cardIcon.innerHTML = dayData.icon;
+                cardIcon.style.color = dayData.color;
+                
+                const dayTheme = document.createElement('h3');
+                dayTheme.className = 'day-theme';
+                dayTheme.textContent = dayData.theme;
+                dayTheme.style.color = dayData.color;
+                
+                const date = document.createElement('div');
+                date.className = 'date';
+                date.textContent = formatShortDate(dayData.date);
+                
+                dayCard.appendChild(dayNumber);
+                dayCard.appendChild(cardIcon);
+                dayCard.appendChild(dayTheme);
+                dayCard.appendChild(date);
+                
+                // Add click event to open popup only if unlocked
+                if (isUnlocked) {
+                    dayCard.addEventListener('click', function() {
+                        openPopup(index);
+                    });
+                } else {
+                    dayCard.addEventListener('click', function() {
+                        // Show a gentle message for locked days
+                        const overlay = document.getElementById('popup-overlay');
+                        const popupContent = document.getElementById('popup-content');
+                        
+                        popupContent.innerHTML = `
+                            <div class="popup-header">
+                                <div class="popup-icon">🔒</div>
+                                <h2 class="popup-theme">Coming Soon!</h2>
+                                <div class="popup-date">${formatDateDisplay(dayData.date)}</div>
+                            </div>
+                            <div class="popup-body" style="justify-content: center; align-items: center;">
+                                <div style="text-align: center; padding: 30px;">
+                                    <h3 class="popup-title" style="font-size: 2.5rem;">${dayData.theme}</h3>
+                                    <div class="popup-message" style="max-height: none; font-size: 1.3rem;">
+                                        <p>This day is locked! Come back on ${formatDateDisplay(dayData.date)} to unlock this special message.</p>
+                                        <p style="margin-top: 20px; font-style: italic;">Good things come to those who wait, my dear! 😊</p>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                        
+                        overlay.classList.add('active');
+                    });
+                }
+                
+                container.appendChild(dayCard);
+            });
+            
+            // Update the "Open Today's Card" button state
+            updateTodayButton();
+        }
+        
+        // Update the "Open Today's Card" button
+        function updateTodayButton() {
+            const openTodayBtn = document.getElementById('open-today-btn');
+            
+            if (todayIndex >= 0 && todayIsUnlocked) {
+                openTodayBtn.disabled = false;
+                openTodayBtn.innerHTML = '<i class="fas fa-calendar-day"></i> Open Today\'s Card, My Dear!';
+            } else {
+                openTodayBtn.disabled = true;
+                openTodayBtn.innerHTML = '<i class="fas fa-calendar-day"></i> Today\'s Card Not Available';
+            }
+        }
+        
+        // Open popup with specific day data
+        function openPopup(index) {
+            const dayData = valentineWeekData[index];
+            const overlay = document.getElementById('popup-overlay');
+            const popupContent = document.getElementById('popup-content');
+            
+            // Create popup content
+            popupContent.innerHTML = '';
+            
+            // Header section
+            const header = document.createElement('div');
+            header.className = 'popup-header';
+            
+            const popupIcon = document.createElement('div');
+            popupIcon.className = 'popup-icon';
+            popupIcon.innerHTML = dayData.icon;
+            popupIcon.style.color = dayData.color;
+            
+            const popupTheme = document.createElement('h2');
+            popupTheme.className = 'popup-theme';
+            popupTheme.textContent = dayData.theme;
+            popupTheme.style.color = dayData.color;
+            
+            const popupDate = document.createElement('div');
+            popupDate.className = 'popup-date';
+            popupDate.textContent = formatDateDisplay(dayData.date);
+            
+            header.appendChild(popupIcon);
+            header.appendChild(popupTheme);
+            header.appendChild(popupDate);
+            
+            // Body section with image and message
+            const body = document.createElement('div');
+            body.className = 'popup-body';
+            
+            // Image container
+            const imageContainer = document.createElement('div');
+            imageContainer.className = 'popup-image-container';
+            
+            const image = document.createElement('img');
+            image.className = 'popup-image';
+            image.src = dayData.image;
+            image.alt = dayData.theme;
+            image.loading = 'lazy';
+            
+            imageContainer.appendChild(image);
+            
+            // Message container
+            const messageContainer = document.createElement('div');
+            messageContainer.className = 'popup-message-container';
+            
+            const popupTitle = document.createElement('h3');
+            popupTitle.className = 'popup-title';
+            popupTitle.textContent = dayData.title;
+            popupTitle.style.color = dayData.color;
+            
+            const popupMessage = document.createElement('div');
+            popupMessage.className = 'popup-message';
+            popupMessage.textContent = dayData.message;
+            
+            const popupWish = document.createElement('div');
+            popupWish.className = 'popup-wish';
+            popupWish.textContent = dayData.wish;
+            popupWish.style.color = dayData.color;
+            
+            messageContainer.appendChild(popupTitle);
+            messageContainer.appendChild(popupMessage);
+            messageContainer.appendChild(popupWish);
+            
+            // Add image and message containers to body
+            body.appendChild(imageContainer);
+            body.appendChild(messageContainer);
+            
+            // Add header and body to popup content
+            popupContent.appendChild(header);
+            popupContent.appendChild(body);
+            
+            // Show popup
+            overlay.classList.add('active');
+            
+            // Trigger emoji burst
+            triggerEmojiBurst(dayData.emojis);
+        }
+        
+        // Trigger emoji burst animation
+        function triggerEmojiBurst(emojis) {
+            const screenWidth = window.innerWidth;
+            const screenHeight = window.innerHeight;
+            
+            // Create 30 emojis for the burst effect
+            for (let i = 0; i < 30; i++) {
+                const emoji = document.createElement('div');
+                emoji.className = 'emoji-burst';
+                
+                // Randomly select an emoji from the day's emoji array
+                const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
+                emoji.textContent = randomEmoji;
+                
+                // Random starting position (center of screen)
+                const startX = screenWidth / 2;
+                const startY = screenHeight / 2;
+                
+                // Random end position (anywhere on screen)
+                const endX = (Math.random() - 0.5) * screenWidth * 1.5;
+                const endY = (Math.random() - 0.5) * screenHeight * 1.5;
+                
+                // Set custom CSS properties for animation
+                emoji.style.left = `${startX}px`;
+                emoji.style.top = `${startY}px`;
+                emoji.style.setProperty('--tx', `${endX}px`);
+                emoji.style.setProperty('--ty', `${endY}px`);
+                
+                // Random size
+                const size = 1 + Math.random() * 1.5;
+                emoji.style.fontSize = `${size}rem`;
+                
+                // Random color variation
+                const hue = Math.floor(Math.random() * 360);
+                emoji.style.filter = `hue-rotate(${hue}deg)`;
+                
+                // Add to document
+                document.body.appendChild(emoji);
+                
+                // Remove after animation completes
+                setTimeout(() => {
+                    emoji.remove();
+                }, 3000);
+            }
+        }
+        
+        // Close popup
+        document.getElementById('close-popup').addEventListener('click', function() {
+            const overlay = document.getElementById('popup-overlay');
+            overlay.classList.remove('active');
+        });
+        
+        // Open today's card button
+        document.getElementById('open-today-btn').addEventListener('click', function() {
+            if (todayIndex >= 0 && todayIsUnlocked) {
+                openPopup(todayIndex);
+            }
+        });
+        
+        // Auto-open today's card on page load (after a delay) only if today is unlocked
+        setTimeout(() => {
+            if (todayIndex >= 0 && todayIsUnlocked) {
+                openPopup(todayIndex);
+            }
+        }, 1500);
+        
+        // Close popup when clicking outside the card
+        document.getElementById('popup-overlay').addEventListener('click', function(e) {
+            if (e.target === this) {
+                this.classList.remove('active');
+            }
+        });
+        
+        // Initialize day cards
+        renderDayCards();
+        
+        // Add entrance animation to day cards
+        setTimeout(() => {
+            const dayCards = document.querySelectorAll('.day-card');
+            dayCards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                
+                setTimeout(() => {
+                    card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+        }, 300);
+    </script>
+</body>
+</html>
